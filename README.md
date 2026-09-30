@@ -71,3 +71,10 @@ cargo test --release
 ```
 
 To also compare decoded values with files from another TIFF writer, set `TEST_IMAGES` to a list file. Each line has these tab-separated fields: `path[#band]`, width, height, then `x y value` for each point.
+
+## License
+
+You can use this software under the terms of one of these licenses:
+
+- Apache License, Version 2.0 ([LICENSE-APACHE](LICENSE-APACHE))
+- MIT License ([LICENSE-MIT](LICENSE-MIT))
