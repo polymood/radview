@@ -1,7 +1,8 @@
 [package]
 name = "radview"
-version = "0.1.0"
+version = "1.0.0"
 edition = "2024"
+rust-version = "1.95"
 description = "Fast GPU viewer for SAR and ISAR images (NITF SICD/SIDD, TIFF, BigTIFF, COG)"
 license = "MIT OR Apache-2.0"
 repository = "https://github.com/polymood/radview"

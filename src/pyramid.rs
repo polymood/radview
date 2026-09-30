@@ -36,7 +36,7 @@ impl Px for u8 {
         r.to_u8(raw, out)
     }
     fn half_row(a: &[u8], b: &[u8], out: &mut [u8]) {
-        let pairs = a.chunks_exact(2).zip(b.chunks_exact(2));
+        let pairs = a.as_chunks::<2>().0.iter().zip(b.as_chunks::<2>().0);
         for (o, (a, b)) in out.iter_mut().zip(pairs) {
             *o = ((a[0] as u16 + a[1] as u16 + b[0] as u16 + b[1] as u16 + 2) >> 2) as u8;
         }

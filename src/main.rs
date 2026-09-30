@@ -600,7 +600,7 @@ impl App {
                         Some(t) => {
                             t.used = self.frame;
                             let (w, h) = (TILE.min(lw - tx * TILE), TILE.min(lh - ty * TILE));
-                            let (x0, y0, k) = ((tx * TILE << l) as f32, (ty * TILE << l) as f32, (1usize << l) as f32);
+                            let (x0, y0, k) = (((tx * TILE) << l) as f32, ((ty * TILE) << l) as f32, (1usize << l) as f32);
                             let (u, v) = (w as f32 / TILE as f32, h as f32 / TILE as f32);
                             out.push(Inst { rect: [x0, y0, x0 + w as f32 * k, y0 + h as f32 * k], uvl: [u, v, t.layer as f32, 0.0] });
                             t.version == version

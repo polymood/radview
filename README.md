@@ -14,6 +14,27 @@ For complex data, you can show amplitude, phase, I or Q. For multi-band data, yo
 
 JPEG and JPEG 2000 compression are not supported.
 
+## Install
+
+Download the archive for your system from the [releases](https://github.com/polymood/radview/releases) page. Extract the archive and start `radview` (Windows: `radview.exe`).
+
+| System | Archive |
+|---|---|
+| Windows x86_64 | `radview-<version>-x86_64-pc-windows-msvc.zip` |
+| Linux x86_64 | `radview-<version>-x86_64-unknown-linux-gnu.tar.gz` |
+| Linux arm64 | `radview-<version>-aarch64-unknown-linux-gnu.tar.gz` |
+| macOS Apple silicon | `radview-<version>-aarch64-apple-darwin.tar.gz` |
+| macOS Intel | `radview-<version>-x86_64-apple-darwin.tar.gz` |
+
+To verify the download, use the SHA-256 checksums and the build provenance:
+
+```
+sha256sum -c SHA256SUMS.txt --ignore-missing
+gh attestation verify <archive> --repo polymood/radview
+```
+
+The x86_64 binaries need a CPU with AVX2. The macOS binaries are not signed. Before the first start, run `xattr -d com.apple.quarantine radview`.
+
 ## Use
 
 ```
@@ -54,7 +75,7 @@ rustup target add x86_64-pc-windows-gnu
 cargo build --release --target x86_64-pc-windows-gnu
 ```
 
-The build uses `target-cpu=x86-64-v3` (AVX2). To run on older CPUs, remove this flag from `.cargo/config.toml`.
+On x86_64, the build uses `target-cpu=x86-64-v3` (AVX2). To run on older CPUs, remove this flag from `.cargo/config.toml`.
 
 ## Operation
 
